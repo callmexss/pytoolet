@@ -1,6 +1,0 @@
-# ignore .sh files.
-*.sh
-acp.sh
-
-# ignore .un~
-*.un~
