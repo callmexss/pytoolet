@@ -1,0 +1,5 @@
+# ignore .sh files.
+*.sh
+
+# ignore .un~
+*.un~
