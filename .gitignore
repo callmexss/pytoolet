@@ -1,7 +1,9 @@
 # ignore .sh files.
 *.sh
 *.sh~
-acp.sh
 
 # ignore .un~
 *.un~
+
+# ignore .pyc
+*.pyc
