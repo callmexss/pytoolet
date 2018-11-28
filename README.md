@@ -1,4 +1,4 @@
-# my python tiny tools
+# My Python Tiny Tools
 
 Some simple scripts that I use to make my life easier.
 
