@@ -15,6 +15,10 @@ make it can fix more code line error.
 
 Automatically force kill visual studio.
 
+### add_str_at_begin.py
+
+Just add a '\* ' at each line's beginning.
+
 ## Linux
 
 ## Cross-Platform
