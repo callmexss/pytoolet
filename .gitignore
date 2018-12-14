@@ -9,3 +9,6 @@
 
 # ignore private data
 *.privd
+
+# ignore vscode
+.vscode

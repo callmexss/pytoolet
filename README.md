@@ -19,7 +19,7 @@ Automatically force kill visual studio.
 
 Just add a '\* ' at each line's beginning.
 
-### process_from_clipboard
+### process_from_clipboard.py
 
 Copy some text to the clipboard and process it then return it back.
 
@@ -29,13 +29,17 @@ Now it has the following functions:
 - Extract phone numbers from given text.
 - Format BBC news, the headlines.
 
-### multiclipboard
+### multiclipboard.py
 
 A Python program to keep track of multiple pieces of text.
 
 **TODO**:
 
 - Data should be encryped if they were need to be upload to github.
+
+### auto_backup_old.py
+
+Automatically backup my files only for windows.
 
 ## Linux
 
@@ -52,3 +56,7 @@ To get my private ip address, and copy it to the clipboard.
 ### get_global_ip.py
 
 To get my public ip address, and copy it to the clipboard.
+
+### auto_backup.py
+
+Automatically backup my files for both windows and linux.
