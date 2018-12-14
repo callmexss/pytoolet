@@ -12,7 +12,6 @@ Modified By:   xss (callmexss@126.com)
 import os
 import platform
 import zipfile
-import shutil
 import time
 
 config_filename = 'data/auto_backup_conf.privd'  # This should be default
@@ -22,7 +21,7 @@ if platform.system().lower() == 'windows':
 elif platform.system().lower() == 'linux':
     backup_dir = r'/backup/auto_backup'
 if not os.path.isdir(backup_dir):
-    os.mkdir(backup_dir)
+    os.makedirs(backup_dir)
 
 
 def check_priv_config():
@@ -49,10 +48,10 @@ def get_all_target_path():
 
 def backup(target):
     """Backup all the files in target directory to a zip file.
-    
+
     Arguments:
         target {str} -- Directory to be backed up.
-    
+
     TODO:
         Make the logic more easily to understand.
     """
@@ -78,6 +77,7 @@ def backup(target):
             for file in files:
                 files_path.append(os.path.join(root, file))
         for each in files_path:
+            print('Compress file {}...'.format(each))
             zip_file.write(each,
                            each[each.find(os.path.basename(backup_path)):])
 
@@ -86,7 +86,11 @@ def auto_backup():
     target_path_list = get_all_target_path()
     # print(target_path_list)
     for each in target_path_list:
-        backup(each)
+        try:
+            backup(each)
+        except Exception as err:
+            print(err)
+            continue
     print('Done!')
 
 
