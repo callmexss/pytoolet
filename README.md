@@ -8,7 +8,7 @@ Some simple scripts that I use to make my life easier.
 
 It is used for format the code copied from a online compiler, which just simple replace the `tab` by `4 spaces` and replace `\n\n` to `\n`. And copy the format code to clipboard.
 
-**todo**:
+**TODO**:
 make it can fix more code line error.
 
 ### auto_kill_vs.py
@@ -18,6 +18,24 @@ Automatically force kill visual studio.
 ### add_str_at_begin.py
 
 Just add a '\* ' at each line's beginning.
+
+### process_from_clipboard
+
+Copy some text to the clipboard and process it then return it back.
+
+Now it has the following functions:
+
+- Extract Email from given text
+- Extract phone numbers from given text.
+- Format BBC news, the headlines.
+
+### multiclipboard
+
+A Python program to keep track of multiple pieces of text.
+
+**TODO**:
+
+- Data should be encryped if they were need to be upload to github.
 
 ## Linux
 
