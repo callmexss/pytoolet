@@ -1,5 +1,4 @@
 # ignore .sh files.
-*.sh
 *.sh~
 
 # ignore .un~
@@ -7,3 +6,6 @@
 
 # ignore .pyc
 *.pyc
+
+# ignore private data
+*.privd
