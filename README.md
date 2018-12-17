@@ -60,3 +60,11 @@ To get my public ip address, and copy it to the clipboard.
 ### auto_backup.py
 
 Automatically backup my files for both windows and linux.
+
+### pfc.py
+
+Python folder status say.
+
+### lucky.py
+
+Google search handy.
