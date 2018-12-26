@@ -68,3 +68,7 @@ Python folder status say.
 ### lucky.py
 
 Google search handy.
+
+### show_daily_info.py
+
+Get some daily information I am insterested in.

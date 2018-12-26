@@ -114,13 +114,30 @@ class Processor(object):
 
     def format_BBC(self, end='\n'):
         """Format BBC news, the headlines."""
-        pc = re.compile(r'\w+' + self.re_dict['2bytes chars'] + r'\s?' + self.re_dict['2bytes chars'] + r'+[^\s]+')
+        pc = re.compile(r'\w+' + self.re_dict['2bytes chars'] + r'\s?' +
+                        self.re_dict['2bytes chars'] + r'+[^\s]+')
         pe = re.compile(r'[a-zA-Z0-9\']+\s+.*\.')
         chinese = pc.findall(self.text)
         english = pe.findall(self.text)
         chinese = [x + '。\n' for x in chinese]
         final = [x + '\n' + y for x, y in zip(english, chinese)]
         return end.join(final)
+
+    def extract_words(self, end='\n'):
+        """Extract words from vocabulary notebook."""
+        exclude = [
+            '\n', '\t', None, ' ', 'adj', 'adv', 'abbr', 'n', 'v', 'vt', 'vi'
+        ]
+        pwords = re.compile(r'\d,\s([A-Za-z\s]+)[\W]')
+        words = pwords.findall(self.text)
+        words = [
+            x.strip() for x in set(words)
+            if '\r\n' not in x and x.strip() not in exclude
+        ]
+        # print(words)
+        with open("data/wordslist.txt", 'w') as f:
+            f.write(end.join(words))
+        return end.join(words)
 
 
 if __name__ == '__main__':
@@ -130,4 +147,4 @@ if __name__ == '__main__':
     text = processor.process()
     clipboard.copy(text)
     print("Finished!")
-    time.sleep(3)
+    time.sleep(0.5)
