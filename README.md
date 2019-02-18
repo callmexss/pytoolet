@@ -35,13 +35,17 @@ A Python program to keep track of multiple pieces of text.
 
 **TODO**:
 
-- Data should be encryped if they were need to be upload to github.
+- Data should be encryped if they need to be upload to github.
 
 ### auto_backup_old.py
 
 Automatically backup my files only for windows.
 
 ## Linux
+
+### pyscp
+
+Simple code upload/download file to/from a remote server.
 
 ## Cross-Platform
 
