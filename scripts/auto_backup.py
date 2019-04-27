@@ -15,6 +15,8 @@ import platform
 import zipfile
 import time
 
+from apscheduler.schedulers.blocking import BlockingScheduler
+
 config_filename = 'data/auto_backup_conf.privd'  # This should be default
 
 if platform.system().lower() == 'windows':
@@ -95,6 +97,17 @@ def auto_backup():
     print('Done!')
 
 
-if __name__ == '__main__':
+def start():
     check_priv_config()
     auto_backup()
+
+
+if __name__ == '__main__':
+    scheduler = BlockingScheduler()
+    scheduler.add_job(start, 'cron', hour=8)
+
+    try:
+        scheduler.start()
+    except (KeyboardInterrupt, SystemExit):
+        pass
+
