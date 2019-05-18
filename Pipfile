@@ -9,8 +9,12 @@ selenium = "*"
 requests = "*"
 bs4 = "*"
 lxml = "*"
+pysnooper = "*"
 
 [dev-packages]
+pylint = "*"
+yapf = "*"
+flake8 = "*"
 
 [requires]
 python_version = "3.5"

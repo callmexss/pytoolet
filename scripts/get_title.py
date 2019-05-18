@@ -11,5 +11,5 @@ Modified By:   xss (callmexss@126.com)
 
 import clipboard
 
-s = input("input the title: ")
+s = clipboard.paste()
 clipboard.copy(s.title())

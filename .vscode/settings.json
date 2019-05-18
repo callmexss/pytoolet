@@ -1,3 +1,16 @@
 {
-  "python.linting.pylintEnabled": true
+  "python.linting.pylintEnabled": true,
+  "python.pythonPath": "C:\\Users\\xaut\\.virtualenvs\\pytoolet--ZJOia1X\\Scripts\\python.exe",
+  "python.linting.flake8Enabled": false,
+  "python.linting.enabled": false,
+  "python.testing.unittestArgs": [
+    "-v",
+    "-s",
+    ".",
+    "-p",
+    "*_test.py"
+  ],
+  "python.testing.pyTestEnabled": false,
+  "python.testing.nosetestsEnabled": false,
+  "python.testing.unittestEnabled": true
 }
