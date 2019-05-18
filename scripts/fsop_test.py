@@ -22,5 +22,6 @@ class TestFsop(unittest.TestCase):
             self.assertTrue(os.path.exists(file))
 
 
-python_files = ['.py', '.pyc']
-print(fsop.find_files_by_type('.', file_type=python_files, recursively=True))
+python_files = ['*.py', '*.pyc']
+print([x for x in fsop.find_specific_files(patterns=python_files)])
+fsop.list_files_by(fsop.find_all_files())
