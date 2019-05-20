@@ -11,4 +11,4 @@
 *.privd
 
 # ignore vscode
-.vscode
+*.vscode*

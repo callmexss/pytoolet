@@ -17,6 +17,7 @@ import time
 from pprint import pprint
 
 import clipboard
+import pysnooper
 
 
 class Processor(object):
@@ -138,6 +139,20 @@ class Processor(object):
         with open("data/wordslist.txt", 'w') as f:
             f.write(end.join(words))
         return end.join(words)
+
+    @pysnooper.snoop()
+    def format_ipython(self, end='\n'):
+        """Format ipython input to >>>, output to blank prefix"""
+        ret = []
+        for line in self.text.split("\r\n"):
+            if 'In' in line:
+                ret.append(">>>" + line[line.find(":") + 1:])
+            elif 'Out' in line:
+                ret.append(line[line.find(": ") + 1:])
+            else:
+                ret.append(line)
+
+        return "\n".join(ret)
 
 
 if __name__ == '__main__':
