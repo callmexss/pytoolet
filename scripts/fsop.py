@@ -127,3 +127,19 @@ def list_files_by_atime():
 
 def list_files_by_mtime():
     pass
+
+
+def calculate_file_md5(filename):
+    """Calculate md5 sum of a file.
+    
+    Arguments:
+        filename {str} -- filename
+    
+    Returns:
+        str -- hexdigest for a md5 sum of a file
+    """
+    md5 = hashlib.md5()
+    with open(filename, 'rb') as f:
+        for line in f:
+            md5.update(line)
+    return md5.hexdigest()
