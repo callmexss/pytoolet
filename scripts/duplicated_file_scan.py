@@ -10,7 +10,37 @@ Modified By:   xss (callmexss@126.com)
 '''
 
 import os
+import sys
+from pprint import pprint
+
+import fsop
 
 
-def find_specific_files(path, pattern=[]):
-    pass
+class DuplicatedScaner:
+    def __init__(self):
+        self.hash_table = {}
+        self.size_table = {}
+
+    def scan(self):
+        for root, _, files in os.walk(os.getcwd()):
+            for f in files:
+                filename = os.path.join(root, f)
+                filesize = os.path.getsize(filename)
+                if filesize not in self.size_table:
+                    self.size_table[filesize] = []
+                self.size_table[filesize].append(filename)
+
+        for size, files in self.size_table.items():
+            if len(files) > 1:
+                for file in files:
+                    self.hash_table[file] = fsop.calculate_file_md5(file)
+
+    def report(self):
+        pprint(sorted(self.hash_table.items(), key=lambda x: x[1]))
+
+
+if __name__ == '__main__':
+    # pprint(hash_table)
+    scaner = DuplicatedScaner()
+    scaner.scan()
+    scaner.report()
