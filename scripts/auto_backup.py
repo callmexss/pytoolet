@@ -104,7 +104,7 @@ def start():
 
 if __name__ == '__main__':
     scheduler = BlockingScheduler()
-    scheduler.add_job(start, 'cron', hour=8)
+    scheduler.add_job(start, 'interval', hours=6)
 
     try:
         scheduler.start()
