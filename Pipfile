@@ -10,8 +10,12 @@ requests = "*"
 bs4 = "*"
 lxml = "*"
 click = "*"
+pysnooper = "*"
 
 [dev-packages]
+pylint = "*"
+yapf = "*"
+flake8 = "*"
 
 [requires]
 python_version = "3.5"
