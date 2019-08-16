@@ -43,11 +43,15 @@ Automatically backup my files only for windows.
 
 ## Linux
 
+### aw
+
+add new word from `yd` query.
+
+## Cross-Platform
+
 ### pyscp
 
 Simple code upload/download file to/from a remote server.
-
-## Cross-Platform
 
 ### get_title.py
 
