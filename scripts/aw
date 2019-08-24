@@ -1,0 +1,44 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+"""""""""""""""""""""""""""""""""""""""""""""""
+"      Filename: /usr/local/bin/aw
+"
+"        Author: xss - callmexss@126.com
+"   Description: add word into the words list.
+"        Create: 2017-10-31 16:48:51
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+import os
+import sys
+import pickle
+
+
+word = sys.argv[1]
+with open('/home/xss/plain/wl.pickle', 'rb') as f:
+    data = pickle.load(f)
+os.system("yd {}".format(word))
+ans = input("What do you want to? Add/Delete the word in/from the words list(a or d?): ")
+if ans.lower() == 'a':
+    if word.lower() in data.keys():
+        data[word.lower()] = data[word.lower()]+1
+        print("you have query the word {} time(s)".format(data[word.lower()]))
+        print("review it!")
+    else:
+        data[word.lower()] = 1
+        os.system("yd {} >> /home/xss/plain/words.txt".format(word.lower()))
+        print("the word \"{}\" has been added in the words.txt.".format(word.lower()))
+    with open("/home/xss/plain/wl.pickle", "wb") as f:
+        pickle.dump(data, f)
+
+elif ans.lower() == 'd':
+    if word.lower() in data.keys():
+        data.pop(word)
+        print('"{}" has been removed form the list.'.format(word.lower()))
+    else:
+        print('"{}" is not in the list.'.format(word.lower()))
+    with open("/home/xss/plain/wl.pickle", "wb") as f:
+        pickle.dump(data, f)
+
+else:
+    print("do nothing.")
+    exit()
