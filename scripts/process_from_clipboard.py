@@ -154,6 +154,14 @@ class Processor(object):
 
         return "\n".join(ret)
 
+    def add_prefix_before_choices(self, end='\n'):
+        """Add prefix before choices"""
+        ret = []
+        prefix = "ABCDEFGHIJK"
+        for i, line in enumerate(self.text.split("\n")):
+            ret.append(prefix[i] + ". " + line)
+        return "\n".join(ret)
+
 
 if __name__ == '__main__':
     text = clipboard.paste()
