@@ -80,3 +80,7 @@ Google search handy.
 ### show_daily_info.py
 
 Get some daily information I am insterested in.
+
+### auto_download_pic.py
+
+Download picture automatically when copy the address of the picture.

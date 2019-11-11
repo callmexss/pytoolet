@@ -11,6 +11,7 @@ bs4 = "*"
 lxml = "*"
 click = "*"
 pysnooper = "*"
+tkinter = "*"
 
 [dev-packages]
 pylint = "*"
@@ -18,4 +19,4 @@ yapf = "*"
 flake8 = "*"
 
 [requires]
-python_version = "3.5"
+python_version = "3"
