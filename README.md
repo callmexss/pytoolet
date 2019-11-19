@@ -81,6 +81,10 @@ Google search handy.
 
 Get some daily information I am insterested in.
 
-### auto_download_pic.py
+### auto_download_file.py
 
-Download picture automatically when copy the address of the picture.
+Download picture automatically when copy the address of the file.
+
+### flypy_exercise.py
+
+A tool simulate anki card to learn fly pingying.

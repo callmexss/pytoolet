@@ -17,16 +17,18 @@ import clipboard
 
 
 pic_fmt = [".jpg", ".jpeg", ".gif", ".png"]
+doc_fmt = [".doc", ".txt", ".pdf"]
 old = ""
 new = clipboard.paste()
 
 
-def process(new):
-    for fmt in pic_fmt:
+def process(new, fmts, ftype):
+    for fmt in fmts:
         if fmt in new or fmt.upper() in new:
             # print(new[:new.index(fmt)] + fmt)
             new = new[:new.index(fmt)] + fmt
-            os.system(f"proxychains4 wget -P /mnt/c/Users/Public/Pictures {new}")
+            os.system(f"proxychains4 "
+                      f"wget -P /mnt/c/Users/Public/{ftype} {new}")
             break
 
 
@@ -38,7 +40,8 @@ if __name__ == "__main__":
                 continue
                 time.sleep(0.2)
             else:
-                process(new)
+                process(new, pic_fmt, "Pictures")
+                process(new, doc_fmt, "Documents")
                 old = new
     except KeyboardInterrupt:
         print("exit")
